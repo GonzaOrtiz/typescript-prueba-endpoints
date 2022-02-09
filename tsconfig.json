@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {     /* Set the JavaScript language version for emitted JavaScript and include compatible library declarations. */
+    "module": "commonjs",                                /* Specify what module code is generated. */
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "target": "ES6",
+    "moduleResolution": "Node",
+    "sourceMap": false,
+    "outDir": "./dist",
+     "resolveJsonModule": true
+  },
+  "include": [
+    "src/"
+  ]
+}
