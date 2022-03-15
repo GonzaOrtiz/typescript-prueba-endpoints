@@ -4,6 +4,8 @@ import expressWinston from 'express-winston';
 import winston from 'winston';
 import CommonRoutes from "./http/routes/common.routes";
 import UserRoutes from "./http/routes/user/user.routes"
+import mongoose from 'mongoose';
+import userSchema from '../src/models/user.model';
 // @ts-ignore
 // import cors from 'cors';
 
@@ -30,6 +32,11 @@ app.use(expressWinston.logger(loggerOptions));
 const routes: Array<CommonRoutes> = [];
 app.use(express.json());
 routes.push(new UserRoutes(app));
+
+mongoose.connect('mongodb://localhost:27017/test',{
+}, ()=>{
+    console.log('database connected')
+})
 
 app.listen(3000, () => {
     routes.forEach((route: CommonRoutes) => {
